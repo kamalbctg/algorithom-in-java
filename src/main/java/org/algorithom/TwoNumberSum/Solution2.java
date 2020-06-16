@@ -23,7 +23,6 @@ public class Solution2 {
             } else if (sum > targetSum) {
                 right--;
             }
-
         }
         return new int[]{};
     }
