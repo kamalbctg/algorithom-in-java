@@ -3,6 +3,8 @@ package org.algorithom.SmallestDifference;
 import java.util.Arrays;
 
 public class Solution {
+
+    //T: O(nlon(n)+mlog(m))  S: O(1)
     public static int[] smallestDifference(int[] arrayOne, int[] arrayTwo) {
         int[] pair = new int[2];
         int smallest = Integer.MAX_VALUE;
