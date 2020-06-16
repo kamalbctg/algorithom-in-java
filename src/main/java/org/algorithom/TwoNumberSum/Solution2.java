@@ -7,16 +7,15 @@ import java.util.HashMap;
  * Solution: Using two pointer sliding window technique
  */
 public class Solution2 {
-    //T: O(n)
+    //T: O(nlog(n))
     //S: O(1)
     public static int[] twoNumberSum(int[] array, int targetSum) {
         HashMap<Integer, Boolean> hash = new HashMap<>();
-        Arrays.sort(array);
+        Arrays.sort(array);         // log(n)
         int left = 0;
         int right = array.length - 1;
-        while (left < right) {
+        while (left < right) {      // n
             int sum = array[left] + array[right];
-
             if (sum == targetSum) {
                 return new int[]{array[left], array[right]};
             } else if (sum < targetSum) {
