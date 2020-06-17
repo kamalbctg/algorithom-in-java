@@ -61,4 +61,12 @@ public class SolutionTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void TestCase8() {
+        var array = new int[]{1, 2, 0};
+        var expected = false;
+        var actual = Solution.isMonotonic(array);
+        Assert.assertEquals(expected, actual);
+    }
+
 }
