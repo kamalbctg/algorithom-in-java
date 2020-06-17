@@ -9,13 +9,16 @@ public class Solution1 {
     public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
         List<Integer[]> triplets = new ArrayList<>();
         Arrays.sort(array);
-        for (int i = 0; i < array.length - 2; i++) {
+        for (int i = 0; i < array.length; i++) {
             int left = i + 1;
             int right = array.length - 1;
             while (left < right) {
-                int sum = array[i] + array[left] + array[right];
+                int x = array[i];
+                int y = array[left];
+                int z = array[right];
+                int sum = x + y + z;
                 if (sum == targetSum) {
-                    triplets.add(new Integer[]{array[i], array[left], array[right]});
+                    triplets.add(new Integer[]{x, y, z});
                     left++;
                     right--;
                 } else if (sum < targetSum) {
