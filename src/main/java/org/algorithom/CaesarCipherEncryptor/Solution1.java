@@ -10,7 +10,6 @@ public class Solution1 {
             } else {
                 encryptChars[i] = (char) (96 + encryptCharCode % 122); // wrap between a-z or 97 - 122
             }
-
         }
         return new String(encryptChars);
     }
