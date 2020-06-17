@@ -15,12 +15,14 @@ public class Solution2 {
         int left = 0;
         int right = array.length - 1;
         while (left < right) {      // n
-            int sum = array[left] + array[right];
-            if (sum == targetSum) {
-                return new int[]{array[left], array[right]};
-            } else if (sum < targetSum) {
+            int x = array[left];
+            int y = array[right];
+            int s = x + y;
+            if (s == targetSum) {
+                return new int[]{x, y};
+            } else if (s < targetSum) {
                 left++;
-            } else if (sum > targetSum) {
+            } else if (s > targetSum) {
                 right--;
             }
         }

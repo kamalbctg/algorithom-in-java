@@ -10,10 +10,10 @@ public class Solution1 {
     //S: O(n)
     public static int[] twoNumberSum(int[] array, int targetSum) {
         HashMap<Integer, Boolean> hash = new HashMap<>();
-        for (var num : array) {
-            var x = targetSum - num;
-            if (hash.containsKey(x)) return new int[]{x, num};
-            hash.put(num, true);
+        for (var y : array) {
+            var x = targetSum - y;
+            if (hash.containsKey(x)) return new int[]{x, y};
+            hash.put(y, true);
         }
         return new int[]{};
     }
