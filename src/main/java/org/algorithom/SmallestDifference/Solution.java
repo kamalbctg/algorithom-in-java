@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Solution {
 
-
+    //T: O(nlog(n) + mlog(m)), S: O(1)
     public static int[] smallestDifference(int[] arrayOne, int[] arrayTwo) {
         int[] pair = new int[2];
         int left = 0;
