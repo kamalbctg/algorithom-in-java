@@ -4,17 +4,21 @@ public class Solution2 {
     //Time:  O(log(n))
     //Space: O(log(n))
     public static int binarySearch(int[] array, int target) {
-        return findTarget(array, target, 0, array.length - 1);
+        return findTarget(array, target, 0, array.length);
     }
 
-    private static int findTarget(int[] array, int target, int l, int r) {
-        if (l > r) return -1;
-        int mid = (l + r) / 2;
+    private static int findTarget(int[] array, int target, int left, int right) {
+        if (left > right) return -1;
+
+        int mid = (left + right) / 2;
+
         if (target < array[mid])
-            return findTarget(array, target, mid + 1, r);
+            return findTarget(array, target, left, mid - 1);
         else if (target > array[mid])
-            return findTarget(array, target, mid + 1, r);
-        else
+            return findTarget(array, target, mid + 1, right);
+        else {
             return mid;
+        }
     }
+
 }
