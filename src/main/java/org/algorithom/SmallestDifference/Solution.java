@@ -7,27 +7,26 @@ public class Solution {
     //T: O(nlog(n) + mlog(m)), S: O(1)
     public static int[] smallestDifference(int[] arrayOne, int[] arrayTwo) {
         int[] pair = new int[2];
-        int left = 0;
-        int right = 0;
-        int diff = Integer.MAX_VALUE;
-        int smallest = Integer.MAX_VALUE;
         Arrays.sort(arrayOne);
         Arrays.sort(arrayTwo);
-        while (left < arrayOne.length && right < arrayTwo.length) {
-            int x = arrayOne[left];
-            int y = arrayTwo[right];
+        int i = 0;
+        int j = 0;
+        int smallest = Integer.MAX_VALUE;
+        int difference = Integer.MAX_VALUE;
+        while (i < arrayOne.length && j < arrayTwo.length) {
+            int x = arrayOne[i];
+            int y = arrayTwo[j];
             if (x < y) {
-                diff = y - x;
-                left++;
+                difference = y - x;
+                i++;
             } else if (x > y) {
-                diff = x - y;
-                right++;
+                difference = x - y;
+                j++;
             } else {
                 return new int[]{x, y};
             }
-
-            if (smallest > diff) {
-                smallest = diff;
+            if (difference < smallest) {
+                smallest = difference;
                 pair = new int[]{x, y};
             }
         }
