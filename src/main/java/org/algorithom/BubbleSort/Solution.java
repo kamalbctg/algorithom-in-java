@@ -6,6 +6,7 @@ public class Solution {
     public static int[] bubbleSort(int[] array) {
         boolean isSorted = false;
         int counter = 0;
+
         while (!isSorted) {
             isSorted = true;
             for (int i = 0; i < array.length - counter - 1; i++) {
