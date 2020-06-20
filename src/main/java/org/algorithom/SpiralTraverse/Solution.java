@@ -12,23 +12,23 @@ public class Solution {
         int endRow = array.length - 1;
         int startCol = 0;
         int endCol = array[0].length - 1;
-
-        while (startRow <= endRow && startCol <= endCol) {
-            for (int i = startCol; i <= endCol; i++) {
-                result.add(array[startRow][i]);
+        while (startRow < endRow && startCol < endCol) {
+            for (int col = startCol; col <= endCol; col++) {
+                result.add(array[startRow][col]);
             }
 
-            for (int i = startRow + 1; i <= endRow; i++) {
-                result.add(array[i][endCol]);
+            for (int row = startRow + 1; row <= endRow; row++) {
+                result.add(array[row][endCol]);
             }
 
-            for (int i = endCol - 1; i >= startCol; i--) {
-                result.add(array[endRow][i]);
+            for (int col = endCol - 1; col >= startCol; col--) {
+                result.add(array[endRow][col]);
             }
 
-            for (int i = endRow - 1; i > startRow; i--) {
-                result.add(array[i][startCol]);
+            for (int row = endCol - 1; row > startRow; row--) {
+                result.add(array[row][startCol]);
             }
+
             startRow++;
             endRow--;
             startCol++;

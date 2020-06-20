@@ -1,6 +1,8 @@
 package org.algorithom.LongestPeak;
 
 public class Solution {
+    //Time: O(n)
+    //Space: O(1)
     public static int longestPeak(int[] array) {
         int longestPeak = 0;
         int i = 1;
