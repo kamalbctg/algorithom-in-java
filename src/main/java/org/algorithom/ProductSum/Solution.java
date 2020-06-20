@@ -9,14 +9,16 @@ public class Solution {
     }
 
     private static int productSum(List<Object> array, int depth) {
-        int sun = 0;
-        for (var ele : array) {
-            if (ele instanceof ArrayList) {
-                sun += productSum((ArrayList) ele, depth + 1);
+        int sum = 0;
+        for (int i = 0; i < array.size(); i++) {
+            if (array.get(i) instanceof ArrayList) {
+                sum += productSum((List<Object>) array.get(i), depth + 1);
             } else {
-                sun += (int) ele;
+                sum += (int) array.get(i);
             }
         }
-        return depth * sun;
+        return depth * sum;
     }
+
+
 }
