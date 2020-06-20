@@ -7,11 +7,9 @@ public class Solution4 {
         return isPalindromeHelper(str, 0, str.length() - 1);
     }
 
-    public static boolean isPalindromeHelper(String str, int left, int right) {
-        if (left >= right) {
-            return true;
-        }
-        return str.charAt(left) == str.charAt(right) &&
-                isPalindromeHelper(str, left + 1, right - 1);
+    private static boolean isPalindromeHelper(String str, int l, int r) {
+        if (l >= r) return true;
+        return str.charAt(l) == str.charAt(r) && isPalindromeHelper(str, ++l, --r);
     }
+
 }
