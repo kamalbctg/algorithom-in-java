@@ -1,6 +1,8 @@
 package org.algorithom.NthFibonacci;
 
 public class Solution2 {
+    //Time: O(n)
+    //Space: O(1)
     public static int getNthFib(int n) {
         int[] lastTwoFib = new int[]{0, 1};
         int i = 3;

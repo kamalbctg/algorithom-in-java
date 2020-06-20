@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
+    //Time: O(n)
+    //Space: O(n)
     public static int getNthFib(int n) {
         Map<Integer, Integer> cache = new HashMap<>();
         cache.put(1, 0);
