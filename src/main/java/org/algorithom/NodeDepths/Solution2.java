@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution2 {
+    //Time : O(n)
+    //Space: O(h)
     public static int nodeDepths(BST bst) {
         List<Level> stack = new ArrayList<>();
         stack.add(new Level(0, bst));

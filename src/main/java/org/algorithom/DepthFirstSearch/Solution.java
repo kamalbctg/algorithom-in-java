@@ -12,6 +12,7 @@ public class Solution {
             this.name = name;
         }
 
+        //T: O(v+e) S: O(v)
         public List<String> depthFirstSearch(List<String> array) {
             array.add(name);
             for (int i = 0; i < children.size(); i++) {
