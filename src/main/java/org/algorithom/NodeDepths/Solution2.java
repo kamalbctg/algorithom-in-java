@@ -14,8 +14,8 @@ public class Solution2 {
             Level top = stack.remove(stack.size() - 1);
             if (top.node == null) continue;
             sum += top.depth;
-            stack.add(new Level(top.depth + 1, top.node.left));
             stack.add(new Level(top.depth + 1, top.node.right));
+            stack.add(new Level(top.depth + 1, top.node.left));
         }
         return sum;
     }
