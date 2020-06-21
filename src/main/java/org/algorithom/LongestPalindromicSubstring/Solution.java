@@ -17,7 +17,6 @@ public class Solution {
     }
 
     private static int[] palindromicFrom(String str, int left, int right) {
-        System.out.print("");
         while (left >= 0 && right < str.length()) {
             if (str.charAt(left) != str.charAt(right)) {
                 break;
