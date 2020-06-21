@@ -10,8 +10,7 @@ public class Solution {
         for (int i = 1; i < str.length(); i++) {
             int[] odd = palindromicFrom(str, i - 1, i + 1);
             int[] even = palindromicFrom(str, i - 1, i);
-            int[] tmpLongest = Stream.of(odd, even).max(Comparator.comparing(arr -> arr[1] - arr[0])).get();
-            longest = Stream.of(longest, tmpLongest).max(Comparator.comparing(arr -> arr[1] - arr[0])).get();
+            longest = Stream.of(longest, odd, even).max(Comparator.comparing(arr -> arr[1] - arr[0])).get();
         }
         return str.substring(longest[0], longest[1]);
     }
