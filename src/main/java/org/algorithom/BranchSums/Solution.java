@@ -20,6 +20,5 @@ public class Solution {
         }
         doSum(tree.left, sum, sums);
         doSum(tree.right, sum, sums);
-
     }
 }
