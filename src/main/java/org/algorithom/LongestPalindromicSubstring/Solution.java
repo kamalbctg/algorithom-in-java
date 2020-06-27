@@ -6,23 +6,24 @@ import java.util.stream.Stream;
 public class Solution {
     public static String longestPalindromicSubstring(String str) {
         int[] longest = new int[]{0, 1};
-
         for (int i = 1; i < str.length(); i++) {
-            int[] odd = palindromicFrom(str, i - 1, i + 1);
-            int[] even = palindromicFrom(str, i - 1, i);
-            longest = Stream.of(longest, odd, even).max(Comparator.comparing(arr -> arr[1] - arr[0])).get();
+            int[] odd = longestPalindromicSubstringHelper(str, i - 1, i + 1);
+            int[] even = longestPalindromicSubstringHelper(str, i - 1, i);
+            longest = Stream.of(longest, odd, even).max(Comparator.comparing(n -> n[1] - n[0])).get();
         }
         return str.substring(longest[0], longest[1]);
     }
 
-    private static int[] palindromicFrom(String str, int left, int right) {
-        while (left >= 0 && right < str.length()) {
-            if (str.charAt(left) != str.charAt(right)) {
+    private static int[] longestPalindromicSubstringHelper(String str, int l, int r) {
+        while (l >= 0 && r < str.length()) {
+            if (str.charAt(l) != str.charAt(r)) {
                 break;
             }
-            left--;
-            right++;
+            l--;
+            r++;
         }
-        return new int[]{left + 1, right};
+        return new int[]{l + 1, r};
     }
+
+
 }
