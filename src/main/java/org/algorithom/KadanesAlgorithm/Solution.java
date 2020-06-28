@@ -5,8 +5,8 @@ public class Solution {
         int max = array[0];
         int maxSoFar = array[0];
         for (int i = 1; i < array.length; i++) {
-            maxSoFar = Math.max(maxSoFar + array[i], array[i]);
-            max = Math.max(maxSoFar, max);
+            maxSoFar = Math.max(array[i] + maxSoFar, array[i]);
+            max = Math.max(max, maxSoFar);
         }
         return max;
     }
