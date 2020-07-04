@@ -8,12 +8,7 @@ import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
 
 public class Solution2 {
-    //    @Test
-//    public void TestCase4() {
-//    1, 2, 3, 4, 5, 6, 7, 8));
-//    1, 2, 3, 4, 5, 6, 7));
-//        Assert.assertTrue(Solution2.sameBsts(arrayOne, arrayTwo) == true);
-//    }
+
     public static boolean sameBsts(List<Integer> arrayOne, List<Integer> arrayTwo) {
         return sameBsts(arrayOne, arrayTwo, 0, 0, MIN_VALUE, MAX_VALUE);
     }
