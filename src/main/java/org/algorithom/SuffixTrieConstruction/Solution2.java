@@ -3,15 +3,15 @@ package org.algorithom.SuffixTrieConstruction;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Solution {
+public class Solution2 {
 
     static class TrieNode {
         Map<Character, TrieNode> children = new HashMap<>();
+        boolean isWord;
     }
 
     static class SuffixTrie {
         TrieNode root = new TrieNode();
-        char endSymbol = '*';
 
         public SuffixTrie(String str) {
             populateSuffixTrieFrom(str);
@@ -27,12 +27,12 @@ public class Solution {
             TrieNode node = root;
             for (int i = idx; i < str.length(); i++){
                 Character c = str.charAt(i);
-                if (!node.children.containsKey(str)){
+                if (!node.children.containsKey(c)){
                     node.children.put(c, new TrieNode());
                 }
-                node=node.children.get(c);
+                node = node.children.get(c);
             }
-            node.children.put(endSymbol, null);
+            node.isWord = true;
         }
 
         public boolean contains(String str) {
@@ -42,7 +42,7 @@ public class Solution {
                 if(!node.children.containsKey(c)) return false;
                 node=node.children.get(c);
             }
-           return node.children.containsKey(endSymbol);
+           return node.isWord;
         }
     }
 }
