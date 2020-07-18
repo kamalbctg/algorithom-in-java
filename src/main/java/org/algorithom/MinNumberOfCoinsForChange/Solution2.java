@@ -5,7 +5,7 @@ import java.util.Arrays;
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Math.min;
 
-public class Solution {
+public class Solution2 {
     //T: O(nd), S: O(n)
     public static int minNumberOfCoinsForChange(int n, int[] denoms) {
         int[] distributions = new int[n + 1];
