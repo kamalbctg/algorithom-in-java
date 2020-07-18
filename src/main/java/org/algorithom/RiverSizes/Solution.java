@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class Solution {
+    //https://www.youtube.com/watch?v=R4Nh-EgWjyQ
     public static List<Integer> riverSizes(int[][] matrix) {
         List<Integer> sizes = new ArrayList<>();
         boolean[][] visited = new boolean[matrix.length][matrix[0].length];

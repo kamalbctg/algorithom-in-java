@@ -5,14 +5,20 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class SolutionTest {
     @Test
     public void TestCase1() {
         int[][] input = {{1, 2}, {4, 3}, {5, 6}, {6, 7}};
         int[][] expected = {{10}, {1, 3}};
         Assert.assertTrue(compare(Solution.knapsack(input, 10)
+                , expected));
+    }
+
+    @Test
+    public void TestCase2() {
+        int[][] input = {{1, 2}, {4, 3}, {5, 6}, {6, 7}};
+        int[][] expected = {{10}, {1, 3}};
+        Assert.assertTrue(compare(Solution2.knapsack(input, 10)
                 , expected));
     }
 
