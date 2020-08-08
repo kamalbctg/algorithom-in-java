@@ -11,8 +11,7 @@ public class Solution {
                 if (w > j) {
                     dp[i][j] = dp[i - 1][j];
                 } else {
-                    dp[i][j] = Math.max(dp[i - 1][j],
-                            v + dp[i][j - w]);
+                    dp[i][j] = Math.max(dp[i - 1][j], v + dp[i][j - w]);
                 }
             }
         }
